@@ -46,7 +46,7 @@ public class UsersRestController {
     }
 
     //Create a new user
-    @SneakyThrows
+    @SneakyThrows //lombok  бросание проверяемых исключений без их объявления в throws метода, без неё javassist.NotFoundException
     @PostMapping("admin")
     public ResponseEntity<User> newUser(@RequestBody UserDTO userDTO) {
         User user = new User(userDTO);
@@ -74,7 +74,7 @@ public class UsersRestController {
     }
 
     //User update
-    @SneakyThrows
+    @SneakyThrows //lombok  бросание проверяемых исключений без их объявления в throws метода, без неё javassist.NotFoundException
     @PutMapping("admin")
     public ResponseEntity<User> editUser(@RequestBody UserDTO userDTO) {
         User user = new User(userDTO);
