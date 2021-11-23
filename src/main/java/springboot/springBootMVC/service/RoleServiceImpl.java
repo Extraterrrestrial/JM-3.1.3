@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@Transactional  //Транзакция это последовательность операций, которые выполняются как одно целое. То есть либо все выполнятся сразу, либо, если, случится ошибка, не одна не выполнится.
+@Transactional  //Транзакция это последовательность операций, которые выполняются как одно целое. То есть либо все выполнятся сразу, либо, если, случится ошибка, ни одна не выполнится.
 public class RoleServiceImpl implements RoleService {
 
     private final RoleRepository roleRepository;
