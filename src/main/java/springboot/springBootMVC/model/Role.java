@@ -8,9 +8,7 @@ import org.springframework.security.core.GrantedAuthority;
 import javax.persistence.*;
 import java.util.Set;
 
-/**
- * C @Data падает с stackoverflow
- */
+
 @Entity
 @Table(name = "roles")
 @NoArgsConstructor
