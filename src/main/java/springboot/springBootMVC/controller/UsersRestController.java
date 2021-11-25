@@ -25,6 +25,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+
 @RestController
 @RequestMapping("/")
 public class UsersRestController {
@@ -46,9 +47,9 @@ public class UsersRestController {
     }
 
     //Create a new user
-    @SneakyThrows //lombok  бросание проверяемых исключений без их объявления в throws метода, без неё javassist.NotFoundException
+//    @SneakyThrows //lombok  бросание проверяемых исключений без их объявления в throws метода, без неё javassist.NotFoundException
     @PostMapping("admin")
-    public ResponseEntity<User> newUser(@RequestBody UserDTO userDTO) {
+    public ResponseEntity<User> newUser(@RequestBody UserDTO userDTO) throws NotFoundException{
         User user = new User(userDTO);
         Set<Role> roles = new HashSet<>();
         for (String roleName : userDTO.getRoleNames()) {
@@ -74,9 +75,9 @@ public class UsersRestController {
     }
 
     //User update
-    @SneakyThrows //lombok  бросание проверяемых исключений без их объявления в throws метода, без неё javassist.NotFoundException
+//    @SneakyThrows //lombok  бросание проверяемых исключений без их объявления в throws метода, без неё javassist.NotFoundException
     @PutMapping("admin")
-    public ResponseEntity<User> editUser(@RequestBody UserDTO userDTO) {
+    public ResponseEntity<User> editUser(@RequestBody UserDTO userDTO) throws NotFoundException{
         User user = new User(userDTO);
         Set<Role> roles = new HashSet<>();
         for (String roleName : userDTO.getRoleNames()) {

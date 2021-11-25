@@ -1,5 +1,6 @@
 package springboot.springBootMVC.controller;
 
+
 import javassist.NotFoundException;
 import springboot.springBootMVC.model.Role;
 import springboot.springBootMVC.model.User;
@@ -13,6 +14,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+//@Loggable
 @Component
 public class DataInit {
 
@@ -40,6 +42,7 @@ public class DataInit {
 
             Set<Role> rolesSet = new HashSet<>();
             rolesSet.add(roleService.getByName("ROLE_ADMIN"));
+            rolesSet.add(roleService.getByName("ROLE_USER"));
 
             user1.setUsername("admin");
             user1.setLastname("admin");
@@ -48,6 +51,20 @@ public class DataInit {
             user1.setPassword("admin");
             user1.setRoles(rolesSet);
             userService.save(user1);
+
+            User user2 = new User();
+            Set<Role> rolesSet2 = new HashSet<>();
+            rolesSet2.add(roleService.getByName("ROLE_USER"));
+
+            user2.setUsername("user");
+            user2.setLastname("user");
+            user2.setAge((byte) 16);
+            user2.setEmail("user@test.com");
+            user2.setPassword("user");
+            user2.setRoles(rolesSet2);
+            userService.save(user2);
+
+
         }
     }
 }

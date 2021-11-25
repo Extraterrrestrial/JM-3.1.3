@@ -1,5 +1,6 @@
 package springboot.springBootMVC.service;
 
+
 import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,6 +12,7 @@ import springboot.springBootMVC.model.User;
 // «Пользователь» – это просто Object. В большинстве случаев он может быть
 //  приведен к классу UserDetails.
 // Для создания UserDetails используется интерфейс UserDetailsService, с единственным методом:
+
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 

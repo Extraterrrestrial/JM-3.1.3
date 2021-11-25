@@ -9,6 +9,7 @@ import springboot.springBootMVC.model.Role;
 import java.util.List;
 import java.util.Optional;
 
+
 @Service
 @Transactional  //Транзакция это последовательность операций, которые выполняются как одно целое. То есть либо все выполнятся сразу, либо, если, случится ошибка, ни одна не выполнится.
 public class RoleServiceImpl implements RoleService {
@@ -17,11 +18,13 @@ public class RoleServiceImpl implements RoleService {
 
     @Autowired
     public RoleServiceImpl(RoleRepository roleRepository) {
+        System.out.println("RoleServiceImpl - constructor RoleServiceImpl(RoleRepository roleRepository)");
         this.roleRepository = roleRepository;
     }
 
     @Override
     public List<Role> getAllRoles() {
+        System.out.println("RoleServiceImpl - getAllRoles");
         return roleRepository.findAll();
     }
 
