@@ -46,6 +46,7 @@ public class UsersRestController {
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
 
+
     //Create a new user
 //    @SneakyThrows //lombok  бросание проверяемых исключений без их объявления в throws метода, без неё javassist.NotFoundException
     @PostMapping("admin")
@@ -95,4 +96,5 @@ public class UsersRestController {
         userService.delete(user);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
 }
